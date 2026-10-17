@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<h1 class="titulo-pagina">Notícias</h1>
+<ul class="lista">
+  {% for post in site.posts %}
+  <li class="card{% if post.destaque %} card-destaque{% endif %}">
+    <a href="{{ post.url | relative_url }}">
+      {% if post.imagem %}<img src="{{ post.imagem | relative_url }}" alt="">{% endif %}
+      <div class="card-corpo">
+        <p class="meta">
+          <span class="tag tag-{{ post.tag | default: 'novidade' | slugify: 'latin' }}">{{ post.tag | default: "novidade" }}</span>
+          {% if post.versao %}<span class="versao">v{{ post.versao }}</span>{% endif %}
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d/%m/%Y" }}</time>
+        </p>
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.resumo | default: post.excerpt | strip_html | truncate: 220 }}</p>
+      </div>
+    </a>
+  </li>
+  {% else %}
+  <li class="vazio">Nenhuma notícia ainda.</li>
+  {% endfor %}
+</ul>

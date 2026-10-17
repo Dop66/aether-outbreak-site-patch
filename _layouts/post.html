@@ -1,0 +1,16 @@
+---
+layout: default
+---
+<article class="post">
+  <a class="voltar" href="{{ '/' | relative_url }}">← Todas as notícias</a>
+  <p class="meta">
+    <span class="tag tag-{{ page.tag | default: 'novidade' | slugify: 'latin' }}">{{ page.tag | default: "novidade" }}</span>
+    {% if page.versao %}<span class="versao">v{{ page.versao }}</span>{% endif %}
+    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d/%m/%Y" }}</time>
+  </p>
+  <h1>{{ page.title }}</h1>
+  {% if page.imagem %}<img class="capa" src="{{ page.imagem | relative_url }}" alt="">{% endif %}
+  <div class="texto">
+    {{ content }}
+  </div>
+</article>

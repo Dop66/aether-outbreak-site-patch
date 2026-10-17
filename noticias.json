@@ -1,0 +1,24 @@
+---
+layout: null
+---
+{%- assign lista = site.posts | slice: 0, site.noticias_no_launcher -%}
+{
+  "formato": 1,
+  "site": {{ site.title | jsonify }},
+  "atualizado": {{ site.time | date_to_xmlschema | jsonify }},
+  "noticias": [
+    {%- for post in lista %}
+    {
+      "id": {{ post.id | jsonify }},
+      "titulo": {{ post.title | jsonify }},
+      "data": {{ post.date | date_to_xmlschema | jsonify }},
+      "tag": {{ post.tag | default: "novidade" | jsonify }},
+      "versao": {{ post.versao | jsonify }},
+      "destaque": {% if post.destaque %}true{% else %}false{% endif %},
+      "resumo": {{ post.resumo | default: post.excerpt | strip_html | strip_newlines | strip | jsonify }},
+      "imagem": {% if post.imagem %}{{ post.imagem | absolute_url | jsonify }}{% else %}null{% endif %},
+      "link": {{ post.url | absolute_url | jsonify }}
+    }{% unless forloop.last %},{% endunless %}
+    {%- endfor %}
+  ]
+}

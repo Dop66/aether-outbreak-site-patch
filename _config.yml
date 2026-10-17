@@ -1,0 +1,21 @@
+# Site de notícias e notas de atualização do Aether Outbreak (GitHub Pages + Jekyll).
+# O launcher lê o noticias.json gerado a partir dos posts de _posts/.
+
+title: Aether Outbreak
+description: Notícias e notas de atualização do Aether Outbreak.
+lang: pt-BR
+timezone: America/Sao_Paulo
+
+# Endereço no GitHub Pages: https://dop66.github.io/aether-outbreak-site-patch/
+url: https://dop66.github.io
+baseurl: /aether-outbreak-site-patch
+
+permalink: /noticias/:year/:month/:day/:title/
+markdown: kramdown
+
+# Quantas notícias vão para o noticias.json (as mais novas)
+noticias_no_launcher: 20
+
+exclude:
+  - README.md
+  - .gitignore
