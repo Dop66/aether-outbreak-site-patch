@@ -11,9 +11,9 @@ O jogo está em **fase de testes**. Não tem conta nem login: você só escolhe 
 
 ## Como jogar
 
-1. Baixe o **ZumbiLauncher.zip** no
-   [último release](https://github.com/Dop66/zumbi-extracao-releases/releases/latest).
-2. Extraia a pasta e abra o `ZumbiLauncher.exe`.
+1. Baixe o **AetherOutbreakLauncher.zip** no
+   [último release](https://github.com/Dop66/aether-outbreak-releases/releases/latest).
+2. Extraia a pasta e abra o `AetherOutbreakLauncher.exe`.
 3. Digite seu Nickname, escolha o preset gráfico e clique em **JOGAR**.
 
 Toda vez que você abre o launcher, ele confere se saiu versão nova e baixa só o
