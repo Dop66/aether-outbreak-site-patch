@@ -1,7 +1,7 @@
 ---
 title: Bem-vindo à fase de testes
 tag: aviso
-destaque: true
+destaque: false
 date: 2026-10-17 20:00:00 -0300
 resumo: Como instalar o launcher, escolher seu Nickname e receber as atualizações sozinho.
 ---
